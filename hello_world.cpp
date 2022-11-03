@@ -19,10 +19,10 @@ int main()
         }
 
         cout << "Name: ";
-        cin >> name;
+        getline(cin >> ws, name);
 
         cout << "Birthday: ";
-        cin >> birthday;
+        getline(cin >> ws, birthday);
 
         people.name = name;
         people.birthday = birthday;
@@ -39,7 +39,6 @@ int main()
 
     for (P::People p : vector_of_people)
     {
-        cout << "Name: " + p.getName() << "\n";
-        cout << "Age: " + to_string(p.getAge()) << "\n";
+        cout << "{\"name\": \"" + p.getName() << "\", \"age\": \""<< to_string(p.getAge()) << "\"}";
     }
 }
